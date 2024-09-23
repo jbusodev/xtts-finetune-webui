@@ -26,6 +26,9 @@ from TTS.tts.models.xtts import Xtts
 from TTS.tts.configs.xtts_config import XttsConfig
 from TTS.tts.models.xtts import Xtts
 
+# os.environ["GRADIO_ENVIRONMENT_VARIABLES"] = '{"port": 5003, "host": "127.0.0.1"}'
+# os.environ["GRADIO_LOGGING_LEVEL"] = "DEBUG"
+
 # Clear logs
 def remove_log_file(file_path):
      log_file = Path(file_path)
@@ -686,8 +689,8 @@ if __name__ == "__main__":
 
     demo.launch(
         share=False,
-        debug=False,
+        debug=True,
         server_port=args.port,
         # inweb=True,
-        # server_name="localhost"
+        server_name="localhost",
     )
